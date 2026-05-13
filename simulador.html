@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./favicon.svg" title="image/svg+xml">
+    <title>LogicSim - Simulador</title>
+</head>
+<body>
+<header class="header-bg" id="header-menuBG">
+    <div class="header container">
+        <div class="header-menu" id="header-menu">
+
+            <div class="header-btn" id="header-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+    <nav class="header-nav" id="header-nav" aria-label="primaria">
+        <ul>
+            <li><a href="./">Inicío</a></li>
+            <li><a href="./simulador.html">Simulador</a></li>
+            <li><a href="./tabela.html">Tabela Verdade</a></li>
+            <li><a href="./sobre.html">Sobre</a></li>
+        </ul>
+
+        <div class="header-descricao">
+        <p>Simulador de <br>Circuitos Lógicos</p>
+        <img src="./img/Portas/porta-and.svg" alt="">
+        </div>
+    </nav>
+        <div class="header-descBG" id="header-descBG"></div>        
+
+            <a href="./">
+                <img src="./img/LogicSim-Marca.svg" alt="LogicSim" >
+            </a>
+          
+                <div class="lampada">
+                    <img src="./img/lampadas/desligada.svg" alt="" id="imagem">
+                </div>
+        </div>
+    </div>
+</header>
+
+<main class="editor-bg" id="simulador-bg">
+    <div class="editor-toolbar">
+        <div class="toolbar-group">
+            <button class="toolbar-btn" data-add="INPUT">Input</button>
+            <button class="toolbar-btn" data-add="OUTPUT">Output</button>
+            <button class="toolbar-btn" data-add="AND">
+                <img class="toolbar-icon" src="./img/Portas/porta-and.svg" alt="" aria-hidden="true">
+                AND
+            </button>
+            <button class="toolbar-btn" data-add="OR">
+                <img class="toolbar-icon" src="./img/Portas/porta-or.svg" alt="" aria-hidden="true">
+                OR
+            </button>
+            <button class="toolbar-btn" data-add="NOT">
+                <img class="toolbar-icon" src="./img/Portas/porta-not.svg" alt="" aria-hidden="true">
+                NOT
+            </button>
+            <button class="toolbar-btn" data-add="NAND">
+                <img class="toolbar-icon" src="./img/Portas/porta-nand.svg" alt="" aria-hidden="true">
+                NAND
+            </button>
+            <button class="toolbar-btn" data-add="NOR">
+                <img class="toolbar-icon" src="./img/Portas/porta-nor.svg" alt="" aria-hidden="true">
+                NOR
+            </button>
+            <button class="toolbar-btn" data-add="XOR">
+                <img class="toolbar-icon" src="./img/Portas/porta-xor.svg" alt="" aria-hidden="true">
+                XOR
+            </button>
+            <button class="toolbar-btn" data-add="XNOR">
+                <img class="toolbar-icon" src="./img/Portas/porta-xnor.svg" alt="" aria-hidden="true">
+                XNOR
+            </button>
+        </div>
+        <div class="toolbar-group">
+            <div class="toolbar-expression">
+                <span>Expressao Booleana</span>
+                <strong id="expression-label">-</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="editor-workspace" id="workspace">
+        <svg class="wire-layer" id="wire-layer"></svg>
+        <div class="node-layer" id="node-layer"></div>
+        <svg class="wire-handles" id="wire-handles"></svg>
+    </div>
+</main>
+
+    <script src="./js/config/menu.js"></script>
+    <script src="./js/animação/anima.js"></script>
+    <script type="module" src="./js/editor/main.js"></script>
+</body>
+</html>

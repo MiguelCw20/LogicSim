@@ -1,0 +1,318 @@
+.editor-bg {
+    background: #141820;
+    margin: 20px 28px 28px 300px;
+    display: grid;
+    gap: 14px;
+    width: auto;
+    min-height: 640px;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.menu-fechado .editor-bg {
+    margin-left: 140px;
+}
+
+.editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(18, 21, 27, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 10px 12px;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.toolbar-btn {
+    background: rgba(25, 29, 38, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e6e8ee;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toolbar-btn:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    color: #7dd3fc;
+}
+
+.toolbar-icon {
+    width: 16px;
+    height: 12px;
+    display: block;
+    filter: brightness(1.2);
+}
+
+.toolbar-zoom {
+    min-width: 52px;
+    text-align: center;
+    font-size: 12px;
+    color: #9fb1c7;
+}
+
+.toolbar-expression {
+    display: grid;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: rgba(20, 24, 32, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #c9d4e6;
+    font-size: 12px;
+    min-width: 180px;
+}
+
+.toolbar-expression strong {
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    color: #7ddc77;
+}
+
+.editor-workspace {
+    position: relative;
+    flex: 1;
+    min-height: 520px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        #11151b;
+    background-size: 28px 28px;
+    overflow: hidden;
+}
+
+.wire-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.node-layer {
+    position: absolute;
+    inset: 0;
+    transform-origin: 0 0;
+    z-index: 2;
+}
+
+.wire-handles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.node {
+    position: absolute;
+    min-width: 120px;
+    background: rgba(20, 24, 32, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: #e6e8ee;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    cursor: grab;
+    user-select: none;
+}
+
+.node.node-svg {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.node-graphic {
+    position: relative;
+    display: inline-block;
+}
+
+.node-graphic img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: brightness(1.1);
+}
+
+.node.dragging {
+    cursor: grabbing;
+}
+
+.node-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    margin-bottom: 8px;
+    color: #9fb1c7;
+}
+
+.node-symbol {
+    width: 54px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(23, 27, 36, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #d7deea;
+    margin-bottom: 10px;
+}
+
+.node-symbol img {
+    width: 38px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+.node-body {
+    display: grid;
+    gap: 6px;
+}
+
+.pin-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pin {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #3a4658;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    display: inline-flex;
+    flex: 0 0 14px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.node-svg .pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: #4b5a6f;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pin.output {
+    background: #2c4a64;
+}
+
+.pin.active {
+    background: #3ee777;
+    border-color: rgba(62, 231, 119, 0.8);
+    box-shadow: 0 0 8px rgba(62, 231, 119, 0.7);
+}
+
+.node-value {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #7ddc77;
+}
+
+.input-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(24, 28, 36, 0.9);
+    color: #e6e8ee;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.input-label {
+    width: 44px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(24, 28, 36, 0.9);
+    color: #e6e8ee;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.input-toggle.active {
+    background: rgba(59, 130, 246, 0.5);
+    border-color: rgba(59, 130, 246, 0.8);
+}
+
+.wire {
+    fill: none;
+    stroke: #3b4252;
+    stroke-width: 2.4;
+    pointer-events: none;
+}
+
+.wire.active {
+    stroke: #4ade80;
+    filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.8));
+}
+
+.wire.preview {
+    stroke: #60a5fa;
+    stroke-dasharray: 4 4;
+}
+
+.wire-delete {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.wire-delete circle {
+    fill: rgba(24, 30, 40, 0.95);
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 1;
+    pointer-events: auto;
+}
+
+.wire-delete text {
+    fill: #f87171;
+    font-size: 10px;
+    font-weight: 700;
+    text-anchor: middle;
+    pointer-events: auto;
+}
+
+@media (max-width: 899px) {
+    .editor-bg {
+        margin: 20px;
+    }
+}
