@@ -11,3 +11,11 @@
 /* PORTASMAIN */
 
 @import "./portasMain/portas.css";
+
+/* SIMULADOR */
+
+@import "./simulador/simulador.css";
+
+/* EDITOR */
+
+@import "./editor/editor.css";

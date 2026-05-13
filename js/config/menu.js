@@ -59,6 +59,3 @@ function mudarDePosicao(){
 }
 
 headerBtn.addEventListener('click', mudarDePosicao)
-
-
-
